@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
+using FluentAssertions;
 using Project2.Infrastructure.Context;
 using Project2.Infrastructure.DTOs;
-using Project2.Infrastructure.Model;
-using Project2.Infrastructure.Repos.Interfaces;
-using Project2.Infrastructure.Repos;
-using Project2.TestProject1.Helpers;
 using Project2.Infrastructure.Mapper;
-using FluentAssertions;
+using Project2.Infrastructure.Model;
+using Project2.Infrastructure.Repos;
+using Project2.Infrastructure.Repos.Interfaces;
+using Project2.TestProject1.Helpers;
 
 namespace Project2.TestProject1.Repo
 {
@@ -45,7 +45,7 @@ namespace Project2.TestProject1.Repo
             var gardenList = new List<Garden>
             {
                 new Garden("Location1", new(), new Owner("Ali", "Awan") { Id = 1}) { Id = 4 },
-                new Garden("Location2", new(), new Owner("Florian", "Weber") { Id = 1 }) { Id = 4 },
+                new Garden("Location2", new(), new Owner("Ali", "Awan") { Id = 1 }) { Id = 4 },
                 new Garden("Location3", new(), new Owner("Mathias", "Bodenbrunner")) { Id = 4 },
             };
             var gardenRepo = new GardenRepo(context, mapper);

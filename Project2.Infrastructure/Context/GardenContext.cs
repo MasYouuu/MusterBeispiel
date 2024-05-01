@@ -25,6 +25,7 @@ namespace Project2.Infrastructure.Context
             modelBuilder.Entity<Tree>().HasBaseType(typeof(Plant));
             modelBuilder.Entity<Flower>().HasBaseType(typeof(Plant));
             modelBuilder.Entity<Garden>().Navigation(x => x.Owner).AutoInclude();
+            modelBuilder.Entity<Garden>().Navigation(x => x.Plants).AutoInclude();
             base.OnModelCreating(modelBuilder);
         }
 
@@ -80,7 +81,7 @@ namespace Project2.Infrastructure.Context
                     Owner = owner
                 };
 
-                for (int i = 0; i < 5; i++) 
+                for (int i = 0; i < 5; i++)
                 {
                     garden.AddPlantToGarden(f.PickRandom(fakerFlower));
                     garden.AddPlantToGarden(f.PickRandom(fakerTrees));

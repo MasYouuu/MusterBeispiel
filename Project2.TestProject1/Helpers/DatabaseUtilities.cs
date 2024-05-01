@@ -6,7 +6,7 @@ namespace Project2.TestProject1.Helpers
     {
         public static GardenContext GetDatabase()
         {
-            var context =  new GardenContext();
+            var context = new GardenContext();
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
             return context;
@@ -14,7 +14,6 @@ namespace Project2.TestProject1.Helpers
 
         public async static Task InitializeDatabase(this GardenContext context)
         {
-            
             await context.SeedBogusAsync();
         }
     }

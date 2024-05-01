@@ -1,6 +1,6 @@
 ﻿namespace Project2.Infrastructure.Model
 {
-    public abstract class Plant : BaseEntity
+    public class Plant : BaseEntity
     {
         public string Name { get; set; }
         public List<Garden> Gardens { get; set; } = new();

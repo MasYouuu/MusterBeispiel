@@ -4,7 +4,7 @@ using Project2.Infrastructure.Model;
 
 namespace Project2.Infrastructure.Mapper
 {
-    public class MappingProfile :Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {
@@ -13,6 +13,7 @@ namespace Project2.Infrastructure.Mapper
             CreateMap<Owner, OwnerDTO>().ReverseMap();
             CreateMap<Plant, PlantDTO>().ReverseMap();
             CreateMap<Tree, TreeDTO>().ReverseMap();
+            CreateMap<BaseEntity, BaseDTO>().ReverseMap();
         }
     }
 }

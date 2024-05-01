@@ -3,7 +3,7 @@
     public class Garden : BaseEntity
     {
         public string Location { get; set; }
-        public readonly List<Plant> Plants = new();
+        public List<Plant> Plants { get; set; } = new();
         public Owner Owner { get; set; }
 
 

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Project2.Infrastructure.Context;
 using Project2.Infrastructure.Model;
 using Project2.Infrastructure.Repos.Interfaces;
@@ -13,8 +14,7 @@ namespace Project2.Infrastructure.Repos
 
         public async Task Add(D entity)
         {
-            var mapped = _mapper.Map<T>(entity);
-            _context.Add(mapped);
+            _context.Add(_mapper.Map<T>(entity)).State = EntityState.Added;
             await _context.SaveChangesAsync();
         }
 
@@ -39,8 +39,7 @@ namespace Project2.Infrastructure.Repos
 
         public async Task Update(D entity)
         {
-            var mapped = _mapper.Map<T>(entity);
-            _context.Update(mapped);
+            _context.Entry(_mapper.Map<T>(entity)).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
     }

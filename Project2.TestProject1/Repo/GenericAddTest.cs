@@ -43,9 +43,9 @@ namespace Project2.TestProject1.Repo
 
             var gardenList = new List<Garden>
             {
-                new Garden("Location1", new(), new Owner("Ali", "Awan")),
-                new Garden("Location2", new(), new Owner("Florian", "Weber")),
-                new Garden("Location3", new(), new Owner("Mathias", "Bodenbrunner")),
+                new Garden("Location1", new(), ownerList[0]),
+                new Garden("Location2", new(), ownerList[1]),
+                new Garden("Location3", new(), ownerList[2]),
             };
             var gardenRepo = new GardenRepo(context, mapper);
 
